@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenFlow Yoga</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #333;
+    }
 
+    /* Header Hero */
+    header {
+      background: url('https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 10px 40px;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #009688;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #009688;
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 40px;
+      color: #009688;
+    }
+
+    /* About */
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* Classes Grid */
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .class-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .class-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .class-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.4s ease;
+    }
+
+    .class-card:hover img {
+      filter: brightness(65%);
+    }
+
+    .class-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      color: white;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      transition: transform 0.3s ease;
+    }
+
+    .class-card:hover .class-info {
+      transform: translateY(-5px);
+    }
+
+    .class-info h3 {
+      margin: 0;
+      font-size: 1.4em;
+    }
+
+    .class-info p {
+      margin: 8px 0 0;
+      font-size: 0.95em;
+      color: #ddd;
+    }
+
+    /* Contact Form */
+    .contact form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea, .contact button {
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: inherit;
+    }
+
+    .contact textarea {
+      resize: vertical;
+    }
+
+    .contact button {
+      background: #009688;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contact button:hover {
+      background: #00796b;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="logo">ZenFlow</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>ZenFlow Yoga</h1>
+    <p>Find your balance. Breathe. Flow.</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      At ZenFlow Yoga, we believe yoga is for everyone. Whether you’re a complete beginner 
+      or an experienced yogi, our studio provides a calming space to breathe, stretch, and connect. 
+      Join us to cultivate strength, flexibility, and peace of mind.
+    </p>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="classes" class="classes">
+    <h2>Our Classes</h2>
+    <div class="classes-grid">
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1518611012118-f2e0a749ad67?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Beginner Yoga">
+        <div class="class-info">
+          <h3>Beginner Yoga</h3>
+          <p>Perfect for newcomers to explore basic postures, breathing, and relaxation.</p>
+        </div>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1603071201836-39c5f4f22e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Vinyasa Flow">
+        <div class="class-info">
+          <h3>Vinyasa Flow</h3>
+          <p>Dynamic sequences that connect movement with breath, building energy and focus.</p>
+        </div>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1588286493050-39f4aa0e994b?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" alt="Meditation">
+        <div class="class-info">
+          <h3>Meditation & Breathwork</h3>
+          <p>Slow down, ground yourself, and explore inner stillness through guided sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="return handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ZenFlow Yoga | Made with ❤️ and good vibes</p>
+  </footer>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert("Thank you for reaching out! We'll get back to you soon 🙏");
+      event.target.reset();
+      return false;
+    }
+  </script>
+
+</body>
+</html>
